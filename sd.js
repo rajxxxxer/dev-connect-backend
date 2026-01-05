@@ -2,7 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import 'dotenv/config';
+import connectdb from './configs/db.js';
 const app=express();
+await connectdb();
 app.use(express.json())
 app.use(cors())
 app.get('/',(req,res)=>{
